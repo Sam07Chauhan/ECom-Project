@@ -1,0 +1,57 @@
+{
+  "seller": [
+    {
+      "id": "8f5e",
+      "Name": "test",
+      "Password": "123456",
+      "Email": "test@test.com"
+    }
+  ],
+  "products": [
+    {
+      "id": "7fb2",
+      "name": "IPhone 14",
+      "price": "60000",
+      "color": "Blue",
+      "category": "Apple Phone",
+      "description": "Apple Product",
+      "image": "https://m.media-amazon.com/images/I/61bK6PMOC3L._AC_UF1000,1000_QL80_.jpg"
+    },
+    {
+      "name": "IPhone 14",
+      "price": "60000",
+      "color": "Black",
+      "category": "Apple Phone",
+      "description": "Apple Product",
+      "image": "https://www.bigcmobiles.com/media/catalog/product/cache/e19e56cdd4cf1b4ec073d4305f5db95a/m/i/midnight_1_6.jpg",
+      "id": "ff7c"
+    },
+    {
+      "id": "048c",
+      "name": "IPhone 14",
+      "price": "60000",
+      "color": "White",
+      "category": "Apple Phone",
+      "description": "Apple Product",
+      "image": "https://rukminim1.flixcart.com/image/300/300/xif0q/mobile/m/o/b/-original-imaghx9qkugtbfrn.jpeg"
+    },
+    {
+      "id": "b428",
+      "name": "Hp Laptop",
+      "price": "450000",
+      "color": "Gray",
+      "category": "Laptop",
+      "description": "Its HP product",
+      "image": "https://images-na.ssl-images-amazon.com/images/G/02/aplusautomation/vendorimages/0b925aaf-0920-4019-a78e-dbe23cc1d1fa.jpg._CB536181688_.jpg"
+    },
+    {
+      "id": "5b2e",
+      "name": "Hp Laptop",
+      "price": "450000",
+      "color": "Black",
+      "category": "Laptop",
+      "description": "Its HP product",
+      "image": "https://www.bhphotovideo.com/images/images2500x2500/hp_3we66ua_aba_i7_8750h_2_20mhz_16gb_1tb_1416368.jpg"
+    }
+  ]
+}

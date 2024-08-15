@@ -1,0 +1,60 @@
+.nav   {
+    display: flex;
+    justify-content: space-between;
+}
+.nav h1{
+    color: blueviolet;
+    margin: 0;
+    font-size: 44px;
+}
+.nav ul{
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.nav li{
+    padding-left: 15px;
+    padding-top: 15px;
+}
+.nav li a{
+    text-decoration: none;
+    color: blueviolet;
+}
+.nav .nav-serach {
+    flex: 1;
+    display: flex;
+    margin-top: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.nav .nav-serach input{
+    flex: 1;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    height: 39px;
+    border-right: 0;
+}
+.nav .nav-serach button{
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    height: 39px;
+    border-left: 0;
+}
+.suggestion-result {
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: #fff;
+    width: 280px;
+    top: 40px;
+    border: 1px solid #ddd;
+}
+.suggestion-result li{
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+.suggestion-result li a{
+    cursor: pointer;
+     color: blueviolet;
+}
