@@ -1,5 +1,16 @@
-<div class="row search-item">
-    <div class="">
+<div class="row search-item" *ngFor="let item of ProductList">
+    <div class="col-sm-3">
+        <!-- <img src="https://fliptoy.in/cdn/shop/products/main-image-1-1.jpg?v=1698398282&width=416" alt=""> -->
+        <a routerLink="/details/{{item.id}}">
+            <img src="{{item.image}}" alt="">
+        </a>
+
+    </div>
+    <div class="col-sm-9 details">
+        <h6>Product: {{item.name}}</h6>
+        <p><b>Price: {{item.price}}</b></p>
+        <p><span>Color: {{item.color}}</span><span>Category: {{item.category}}</span></p>
+        <p>{{item.description}}</p>
 
     </div>
 </div>
