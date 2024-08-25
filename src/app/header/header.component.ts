@@ -12,21 +12,35 @@ import { product } from '../data';
 export class HeaderComponent implements OnInit, OnDestroy {
   menuType: string = 'default';
   sellerName: string = '';
+  userName: string = '';
   routeSubscription: Subscription | undefined;
   searchResult: undefined | product[];
 
-  constructor(private route: Router,private product:ProductService) {}
+  constructor(private route: Router, private product: ProductService) { }
 
   ngOnInit(): void {
     this.routeSubscription = this.route.events.subscribe((event: any) => {
-      if (event instanceof NavigationEnd) {  // Use NavigationEnd to detect when navigation ends
+      if (event instanceof NavigationEnd) {
         if (localStorage.getItem('seller') && event.url.includes('seller')) {
           this.menuType = 'seller';
           const sellerStore = localStorage.getItem('seller');
           if (sellerStore) {
             const sellerData = JSON.parse(sellerStore)[0];
-            this.sellerName = sellerData.Name;
-            console.log("Logged in");
+            if (sellerData && sellerData.Name) {
+              this.sellerName = sellerData.Name;
+            }
+          }
+        }
+        else if (localStorage.getItem('user')) {
+          this.menuType = 'user';
+          const userStore = localStorage.getItem('user');
+          if (userStore) {
+            const userData = JSON.parse(userStore)[0];
+            if (userData && userData.name) {
+              this.userName = userData.name;
+              console.log(userData);
+              console.warn('user Logged in');
+            }
           }
         } else {
           this.menuType = 'default';
@@ -35,29 +49,38 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   }
 
+
   logOut(): void {
     localStorage.removeItem('seller');
+    localStorage.removeItem('user');
     this.route.navigate(['/']);
   }
-  Search(query:KeyboardEvent){
-    if(query){
+  userlogOut(): void {
+    localStorage.removeItem('user');
+    this.route.navigate(['/']);
+  }
+  Search(query: KeyboardEvent) {
+    if (query) {
       const element = query.target as HTMLInputElement;
       //console.warn(element.value);
-      this.product.SearchProducts(element.value).subscribe((data)=>{
+      this.product.SearchProducts(element.value).subscribe((data) => {
         //console.warn(data);
-        if(data.length > 4){
-          data.length=4;
+        if (data.length > 4) {
+          data.length = 4;
         }
-        
-        this.searchResult=data;
+
+        this.searchResult = data;
       })
     }
   }
-  Searchout(){
-    this.searchResult=undefined;
+  Searchout() {
+    this.searchResult = undefined;
   }
-  SearchInput(val:string){
+  SearchInput(val: string) {
     this.route.navigate([`search/${val}`]);
+  }
+  redirectToDetails(id: number) {
+    this.route.navigate(['details/' + id]);
   }
 
   ngOnDestroy(): void {
@@ -66,5 +89,5 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.routeSubscription.unsubscribe();
     }
   }
-  
+
 }

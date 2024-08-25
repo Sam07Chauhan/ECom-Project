@@ -7,6 +7,24 @@
       "Email": "test@test.com"
     }
   ],
+  "User": [
+    {
+      "id": "05f7",
+      "name": "anil",
+      "email": "anil@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "54e0",
+      "email": "anil@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "c301",
+      "email": "anil@gmail.com",
+      "password": "123456"
+    }
+  ],
   "products": [
     {
       "id": "7fb2",

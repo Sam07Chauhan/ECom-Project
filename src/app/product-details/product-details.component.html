@@ -1,18 +1,27 @@
 <div class="row product-details">
-    <div class="col-md-5">
-        <img src="{{resultProduct?.image}}" alt="">
-    </div>
-    <div class="col-md-7">
-        <h2>{{resultProduct?.name}}</h2>
-        <p><b>Price: {{resultProduct?.price}}</b></p>
-        <p><span>Color: {{resultProduct?.color}}</span><span>Category: {{resultProduct?.category}}</span></p>
-        <p>{{resultProduct?.description}}</p>
-        <a class="for-button">Buy now</a>
+  <div class="col-md-5">
+    <img src="{{ resultProduct?.image }}" alt="" />
+  </div>
+  <div class="col-md-7">
+    <h2>{{ resultProduct?.name }}</h2>
+    <p>
+      <b>Price: {{ resultProduct?.price }}</b>
+    </p>
+    
+      Color:
+      <h6 [ngStyle]="{ 'background-color': resultProduct?.color }" class="product-color"></h6>
+    
+    <p>
+      <span>Category: {{ resultProduct?.category }}</span>
+    </p>
+    <p>{{ resultProduct?.description }}</p>
+    <a class="for-button">Add to cart</a>
+    <a class="for-button">Buy now</a>
 
-        <div class="quantity-group">
-            <button (click)="decreaseQuantity(quantity.value)">-</button>
-            <input #quantity type="text"   value="1">
-            <button (click)="increaseQuantity(quantity.value)">+</button>
-        </div>
+    <div class="quantity-group">
+      <button (click)="handleQuantity('min')">-</button>
+      <input readonly type="text" value="{{quantity}}" />
+      <button (click)="handleQuantity('plus')">+</button>
     </div>
+  </div>
 </div>
