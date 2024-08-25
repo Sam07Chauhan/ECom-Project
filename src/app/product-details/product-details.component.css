@@ -44,3 +44,9 @@
     border-radius: 3px;
     
 }
+.product-color{
+    border: 1px solid #050404;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
